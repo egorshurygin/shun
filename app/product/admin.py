@@ -1,6 +1,6 @@
 from django.contrib import admin
-from app.product.models import Points, DisplayCode
+from app.product.models import TelegramUsers, DeviceSignals
 
 
-admin.site.register(Points)
-admin.site.register(DisplayCode)
+admin.site.register(TelegramUsers)
+admin.site.register(DeviceSignals)
