@@ -1,9 +1,11 @@
 from sqlite3 import *
 from random import *
+import pathlib
 import os
 
 
-way = r'C:\Users\shury\PycharmProjects\shunDjango\app\TG\identifier.sqlite'
+way = os.path.abspath("identifier.sqlite")
+print(way)
 
 
 def get_lasts() -> set[int]:

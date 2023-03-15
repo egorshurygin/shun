@@ -4,11 +4,14 @@ from app.product.serializers import TelegramUsersSerializer, DeviceSignalsSerial
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from app.TG.CodeFromDisplay import encode_in_message_on_display, get_lasts, way
+from app.TG.CodeFromDisplay import encode_in_message_on_display, get_lasts
 from sqlite3 import *
 from random import *
 import os
 
+way1 = os.path.abspath("1")
+slesh = way1[-2]
+way = way1.replace(f'product{slesh}1', f'TG{slesh}identifier.sqlite')
 print(way)
 
 
