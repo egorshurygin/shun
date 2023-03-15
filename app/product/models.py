@@ -2,6 +2,9 @@ from django.db import models
 
 
 class DeviceSignals(models.Model):
+    """
+    Модель с данными, получемыми с устройства по приему бутылок
+    """
     code = models.CharField(max_length=2000)
 
     price = models.DecimalField(max_digits=9, decimal_places=2)
@@ -13,6 +16,9 @@ class DeviceSignals(models.Model):
 
 
 class TelegramUsers(models.Model):
+    """
+    Модель с пользователями телеграм и суммой их баллов
+    """
     telegram_id = models.IntegerField(verbose_name='ИД пользователя в телеграм')
 
     total_sum = models.DecimalField(verbose_name='Общая сумма баллов', max_digits=9, decimal_places=2)
