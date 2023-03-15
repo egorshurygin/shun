@@ -1,18 +1,17 @@
 from rest_framework import serializers
-from app.product.models import DisplayCode, Points
+from app.product.models import TelegramUsers, DeviceSignals
 
 
-class DisplayCodeSerializer(serializers.ModelSerializer):
+class TelegramUsersSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = DisplayCode
+        model = TelegramUsers
         fields = '__all__'
 
 
-class PointsSerializer(serializers.ModelSerializer):
+class DeviceSignalsSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Points
+        model = DeviceSignals
         fields = '__all__'
-
 
