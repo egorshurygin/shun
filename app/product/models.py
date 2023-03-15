@@ -1,16 +1,21 @@
 from django.db import models
-from pytz import unicode
 
 
-class DisplayCode(models.Model):
+class DeviceSignals(models.Model):
     code = models.CharField(max_length=2000)
 
-    def __str__(self):
-        return unicode(self.code)
+    price = models.DecimalField(max_digits=9, decimal_places=2)
 
-
-class Points(models.Model):
-    price = models.FloatField(default=0)
+    time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return unicode(self.price)
+        return self.code
+
+
+class TelegramUsers(models.Model):
+    telegram_id = models.IntegerField(verbose_name='ИД пользователя в телеграм')
+
+    total_sum = models.DecimalField(verbose_name='Общая сумма баллов', max_digits=9, decimal_places=2)
+
+    def __str__(self):
+        return f'Пользователь {self.telegram_id}'
