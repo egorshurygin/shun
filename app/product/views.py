@@ -1,6 +1,6 @@
 from rest_framework import generics
-from app.product.models import DisplayCode, Points
-from app.product.serializers import DisplayCodeSerializer, PointsSerializer
+from app.product.models import TelegramUsers, DeviceSignals
+from app.product.serializers import TelegramUsersSerializer, DeviceSignalsSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -9,19 +9,21 @@ from sqlite3 import *
 from random import *
 import os
 
-
-class GetListAllDisplayCodeProduct(generics.ListAPIView):
-    serializer_class = DisplayCodeSerializer
-
-    def get_queryset(self):
-        return DisplayCode.objects.all()
+print(way)
 
 
-class GetListAllPoints(generics.ListAPIView):
-    serializer_class = PointsSerializer
+class GetListAllTelegramUsers(generics.ListAPIView):
+    serializer_class = TelegramUsersSerializer
 
     def get_queryset(self):
-        return Points.objects.all()
+        return TelegramUsers.objects.all()
+
+
+class GetListAllDeviceSignals(generics.ListAPIView):
+    serializer_class = DeviceSignalsSerializer
+
+    def get_queryset(self):
+        return DeviceSignals.objects.all()
 
 
 class CreateDisplayCode(APIView):
@@ -34,4 +36,4 @@ class CreateDisplayCode(APIView):
         print(f'{text} - {message}')
 
         return Response(message, status=status.HTTP_201_CREATED)
-
+    
