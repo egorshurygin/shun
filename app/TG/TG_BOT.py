@@ -4,7 +4,7 @@ from CodeFromDisplay import way, encode_in_message_on_display, decode_message_fr
 from random import *
 from sqlite3 import *
 
-bot = telebot.TeleBot("5800701973:AAEXgQsqiEgHNfW_eYw_6Juc4eOjJg-JacM")
+bot = telebot.TeleBot("token")
 
 
 @bot.message_handler(commands=['start'])
